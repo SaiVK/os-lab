@@ -1,0 +1,1000 @@
+ 1031  subl Makefile.common.in 
+ 1032  cd ..
+ 1033  cd benchmarks-cubs/fluid-array-benchmark/
+ 1034  cd ocaml/
+ 1035  ls
+ 1036  riscv64-unknown-elf-objdump -D kernel_ocaml_same_comp > dump_same_comp
+ 1037  riscv64-unknown-elf-objdump -D kernel_ocaml_comp > dump_comp
+ 1038  subl dump_*
+ 1039  spike kernel_ocaml_comp 
+ 1040  spike kernel_ocaml_same_comp 
+ 1041  cd ..
+ 1042  cd ocaml
+ 1043  subl Makefile.common.in 
+ 1044  git log
+ 1045  git commit -am "Cid to 255"
+ 1046  opam uninstall ocaml-freestanding-riscv
+ 1047  opam pin ocaml-riscv .
+ 1048  opam reinstall ocaml-riscv
+ 1049  cd ..
+ 1050  opam reinstall ocaml-boot-riscv ocaml-freestanding-riscv
+ 1051  cd benchmarks-cubs/fluid-array-benchmark/
+ 1052  ls
+ 1053  cd ocaml/
+ 1054  ls
+ 1055  make clean kernel_ocaml_comp_fluid 
+ 1056  spike kernel_ocaml_comp_fluid 
+ 1057  opam pin list
+ 1058  spike kernel_ocaml_comp
+ 1059  riscv64-unknown-elf-objdump -D kernel_ocaml_comp > dump_comp
+ 1060  subl dump_comp 
+ 1061  spike -d kernel_ocaml_comp
+ 1062  cd ..
+ 1063  cd ocaml-boot-riscv/
+ 1064  ls
+ 1065  cd src/
+ 1066  ls
+ 1067  subl startup_1.S 
+ 1068  cd ..
+ 1069  git commit -am "Add check for no exceptions registered i.e. not yet entered ocaml land even for the first time"
+ 1070  opam pin .
+ 1071  cd ..
+ 1072  cd benchmarks-cubs/fluid-array-benchmark/
+ 1073  cd ocaml/
+ 1074  make clean kernel_ocaml_comp_fluid 
+ 1075  spike kernel_ocaml_comp_fluid 
+ 1076  cd ..
+ 1077  cd ocaml
+ 1078  git status
+ 1079  ls
+ 1080  git log
+ 1081  git revert 96cbd747130a65e0d7fae62d23eb4e699a17a0c4
+ 1082  git restore 96cbd747130a65e0d7fae62d23eb4e699a17a0c4
+ 1083  git log
+ 1084  git reset 96cbd747130a65e0d7fae62d23eb4e699a17a0c4
+ 1085  git status
+ 1086  git log
+ 1087  git diff
+ 1088  git commit -am "Cid to 255"
+ 1089  opam uninstall ocaml-freestanding-riscv
+ 1090  opam pin ocaml-riscv . -y
+ 1091  opam reinstall ocaml-riscv -y
+ 1092  opam reinstall ocaml-boot-riscv ocaml-freestanding-riscv -y
+ 1093  cd ..
+ 1094  cd benchmarks-cubs/
+ 1095  cd fluid-array-benchmark/
+ 1096  cd ocaml/
+ 1097  make clean kernel_ocaml_comp_fluid 
+ 1098  spike kernel_ocaml_comp_fluid 
+ 1099  subl ~/.bashrc
+ 1100  echo $UART_BACKEND 
+ 1101  opam reinstall ocaml-boot-riscv ocaml-freestanding-riscv -y
+ 1102  eval $(opam env)
+ 1103  opam switch
+ 1104  mirage-shakti 
+ 1105  cd flu
+ 1106  cd benchmarks-cubs/fluid-array-benchmark/ocaml/
+ 1107  make clean kernel_ocaml_comp_fluid 
+ 1108  rm kernel_ocaml_*
+ 1109  rm dump_*
+ 1110  make clean kernel_ocaml_comp_fluid 
+ 1111  mv kernel_ocaml_comp_fluid rtl_new/
+ 1112  cd ..
+ 1113  cd ocaml
+ 1114  subl
+ 1115  git commit -am "Cid to 1" --amend 
+ 1116  opam uninstall ocaml-freestanding-riscv
+ 1117  opam pin ocaml-riscv . -y
+ 1118  opam reinstall ocaml-riscv -y
+ 1119  opam reinstall ocaml-boot-riscv ocaml-freestanding-riscv -y
+ 1120  cd ..
+ 1121  cd benchmarks-cubs/fluid-array-benchmark/
+ 1122  ls
+ 1123  cd ocaml/
+ 1124  ls
+ 1125  make clean kernel_ocaml_same_comp
+ 1126  spike kernel_ocaml_same_comp 
+ 1127  mv kernel_ocaml_same_comp rtl_new/
+ 1128  cd ..
+ 1129  cd ocaml
+ 1130  git commit -am "Cid to 6" --amend 
+ 1131  git status
+ 1132  git commit -am "Cid to 6" --amend 
+ 1133  git commit -am "Cid to 6"
+ 1134  opam uninstall ocaml-freestanding-riscv -y
+ 1135  opam pin ocaml-riscv . -y
+ 1136  opam reinstall ocaml-riscv -y
+ 1137  opam reinstall ocaml-boot-riscv ocaml-freestanding-riscv -y
+ 1138  cd ..
+ 1139  cd benchmarks-cubs/
+ 1140  cd fluid-array-benchmark/
+ 1141  cd ocaml/
+ 1142  ls
+ 1143  make clean kernel_ocaml_comp
+ 1144  spike kernel_ocaml_comp 
+ 1145  ls
+ 1146  mv kernel_ocaml_comp rtl_new/
+ 1147  cd rtl_new/
+ 1148  ls
+ 1149  cd ..
+ 1150  ls
+ 1151  cd ..
+ 1152  ls
+ 1153  cd ..
+ 1154  ls
+ 1155  ssh sai@10.147.20.244
+ 1156  cd benchmarks-cubs/
+ 1157  cd fluid-array-benchmark/
+ 1158  ls
+ 1159  cd ocaml/
+ 1160  ls
+ 1161  cd rtl_new
+ 1162  ls
+ 1163  rm dump_*
+ 1164  rm spike.dump 
+ 1165  cd ..
+ 1166  scp  rtl_newp   sai@10.147.20.244:/home/sai/ -r
+ 1167  scp -r  rtl_newp   sai@10.147.20.244:/home/sai/ 
+ 1168  scp -r  rtl_new   sai@10.147.20.244:/home/sai/ 
+ 1169  cd ..
+ 1170  ssh sai@10.147.20.244
+ 1171  mirage-shakti 
+ 1172  ls
+ 1173  cd fides-cap-
+ 1174  cd fides-cap-files/
+ 1175  ls
+ 1176  cd microbenchmark/
+ 1177  ls
+ 1178  cd ocaml-boot-riscv/
+ 1179  ls
+ 1180  cd ..
+ 1181  cd checkseum/
+ 1182  ls
+ 1183  cd ..
+ 1184  ls
+ 1185  cd fides-voting-system-3/
+ 1186  ls
+ 1187  cd cmdliner-riscv/
+ 1188  ls
+ 1189  subl cmdliner.cap 
+ 1190  subl ../mirage-runtime/mirage_runtime.cap cmdliner.cap 
+ 1191  mirage-shakti 
+ 1192  ls
+ 1193  cd ocmal-boo
+ 1194  cd ocaml-boot-riscv/
+ 1195  ;s
+ 1196  ls
+ 1197  cd ..
+ 1198  cd setu-cap-files/
+ 1199  ls
+ 1200  cd bheap/
+ 1201  ls
+ 1202  cd ..
+ 1203  cd mirage-shakti/
+ 1204  ls
+ 1205  cd ..
+ 1206  cd llvm-project/
+ 1207  git status
+ 1208  subl llvm/lib/Target/RISCV/MachinePassCheckcap.cpp
+ 1209  cd _build/
+ 1210  ls
+ 1211  subl ../../notes/llvm_make.txt 
+ 1212  cd ..
+ 1213  cd llvm-project/
+ 1214  cd _build/
+ 1215  cmake --build . --target install
+ 1216  ssh sai@10.147.20.244
+ 1217  python
+ 1218  ssh sai@10.147.20.244
+ 1219  python
+ 1220  subl ss.py
+ 1221  python ss.py 
+ 1222  cp fides_plots/fides_cycle.csv .
+ 1223  python ss.py 
+ 1224  cp fides_plots/fides_cycle.csv .
+ 1225  python ss.py 
+ 1226  evinc fides-microbenchmark-cycle-non-log.pdf &
+ 1227  evince fides-microbenchmark-cycle-non-log.pdf &
+ 1228  python ss.py 
+ 1229  python
+ 1230  python ss.py 
+ 1231  pip install matplotlib
+ 1232  pip install seaborn
+ 1233  pip update seaborn
+ 1234  pip install seaborn
+ 1235  pip install --upgrade seaborn
+ 1236  python ss.py 
+ 1237  subl
+ 1238  python ss.py 
+ 1239  python
+ 1240  python ss.py 
+ 1241  ls
+ 1242  spike rtl_new/kernel_ocaml_comp_fluid_6 
+ 1243  subl ss.py 
+ 1244  python ss.py 
+ 1245  opam switch
+ 1246  eval $(opam env)
+ 1247  mirage-shakti 
+ 1248  ls
+ 1249  cd benchmarks-cubs/fluid-array-benchmark/
+ 1250  ls
+ 1251  cd ocaml/
+ 1252  ls
+ 1253  cd rtl_new/
+ 1254  ls
+ 1255  riscv64-unknown-elf-objdump -D kernel_ocaml_same_comp > dump_same_comp
+ 1256  riscv64-unknown-elf-objdump -D kernel_ocaml_comp_fluid > dump_fluid
+ 1257  subl dump_*
+ 1258  riscv64-unknown-elf-objdump -D kernel_ocaml_comp > dump_comp
+ 1259  subl dump_comp 
+ 1260  cd ..
+ 1261  opam switch
+ 1262  cd ..
+ 1263  cd ocaml
+ 1264  ls
+ 1265  cd ..
+ 1266  cd ocaml-boot-riscv/
+ 1267  git status
+ 1268  subl src/startup_2_org.c 
+ 1269  git status
+ 1270  subl ~/.bashrc
+ 1271  source ~/.bashrc
+ 1272  git status
+ 1273  git commit -am "Update fluid compartment boundaries, trial for how code placement affects the cycle count in same vs fluid compartment"
+ 1274  opam pin .
+ 1275  eval $(opam env)
+ 1276  cd ..
+ 1277  cd ocaml
+ 1278  ls
+ 1279  git status
+ 1280  cd ..
+ 1281  cd benchmarks-cubs/fluid-array-benchmark/
+ 1282  ls
+ 1283  cd ocaml/
+ 1284  ls
+ 1285  subl f_arr.cap 
+ 1286  cd rtl_new/
+ 1287  ls
+ 1288  subl dump_*
+ 1289  cd ..
+ 1290  cd benchmarks-cubs/
+ 1291  ls
+ 1292  cd ..
+ 1293  cd ocaml
+ 1294  git log
+ 1295  cd ..
+ 1296  cd benchmarks-cubs/fluid-array-benchmark/
+ 1297  ls
+ 1298  cd ocaml/
+ 1299  make clean kernel_ocaml_comp_fluid 
+ 1300  spike kernel_ocaml_comp_fluid 
+ 1301  riscv64-unknown-elf-objdump -D kernel_ocaml_comp_fluid > dump_fluid
+ 1302  subl dump_fluid 
+ 1303  subl ~/.bashrc
+ 1304  source ~/.bashrc
+ 1305  opam reinstall ocaml-boot-riscv ocaml-freestanding-riscv -y
+ 1306  eval $(opam env)
+ 1307  make clean kernel_ocaml_comp_fluid 
+ 1308  mv kernel_ocaml_comp_fluid kernel_ocaml_comp_fluid_6
+ 1309  mv kernel_ocaml_comp_fluid_6 rtl_new/
+ 1310  scp -r  rtl_new/kernel_ocaml_comp_fluid_6    sai@10.147.20.244:/home/sai/rtl_new
+ 1311  ssh sai@10.147.20.244
+ 1312  python
+ 1313  top
+ 1314  ssh sai@10.147.20.244
+ 1315  python ss_cat.py 
+ 1316  oython
+ 1317  python
+ 1318  python ss_cat.py 
+ 1319  subl
+ 1320  python ss_cat.py 
+ 1321  mirage-shakti 
+ 1322  cd ..
+ 1323  cd llvm-project/
+ 1324  ls
+ 1325  git status
+ 1326  git log
+ 1327  git show d7852befd8a17e1caad2b03496be7ec82e93d8d8
+ 1328  git log
+ 1329  git diff 123bc4c3fb6d4204898664c26218d39d26017a91 f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6
+ 1330  cloc --
+ 1331  cloc --diff 123bc4c3fb6d4204898664c26218d39d26017a91 f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6
+ 1332  cloc --help
+ 1333  cloc --count-and-diff 123bc4c3fb6d4204898664c26218d39d26017a91 f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6
+ 1334  git diff 123bc4c3fb6d4204898664c26218d39d26017a91 f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 --stat
+ 1335  git log
+ 1336  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 --stat
+ 1337  subl llvm/lib/Target/RISCV/MachinePassCheckcap.cpp
+ 1338  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 --stat -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])'
+ 1339  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 --stat -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'
+ 1340  python ss.py 
+ 1341  subl ss.py 
+ 1342  python ss.py 
+ 1343  evince Figure_1.pdf &
+ 1344  rm Figure_1.pdf 
+ 1345  evince Figure_1_1.pdf &
+ 1346  python ss.py 
+ 1347  cp ss.py ss_cat.py
+ 1348  subl ss_cat.py 
+ 1349  python ss_cat.py 
+ 1350  subl ss_cat.py 
+ 1351  python ss_cat.py 
+ 1352  subl ss_cat.py 
+ 1353  python ss_cat.py 
+ 1354  python
+ 1355  python ss_cat.py 
+ 1356  utop
+ 1357  mirage-shakti 
+ 1358  cd ocaml
+ 1359  ls
+ 1360  cd stdlib/
+ 1361  ls
+ 1362  subl string.ml
+ 1363  mirage-shakti 
+ 1364  ls
+ 1365  cd mirage-riscv/
+ 1366  ls
+ 1367  cd ..
+ 1368  cd mirage
+ 1369  git status
+ 1370  git log
+ 1371  git branch
+ 1372  git checkout master
+ 1373  git log
+ 1374  git diff 6b031fd25c74b14f8ee8940df4bb444e18e09e22 d134fead1a4f95ab665eb310364bcb9598a5b419 --stat -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'
+ 1375  git branch
+ 1376  cd ..
+ 1377  ls
+ 1378  cd ocaml
+ 1379  git log
+ 1380  git diff 73ddaf5a4150c86e0142a5c8af17f26faf47798e 403042794068d29583e8b30e22bde94abaf27192 --stat -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'
+ 1381  git diff 73ddaf5a4150c86e0142a5c8af17f26faf47798e 403042794068d29583e8b30e22bde94abaf27192 --stat -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' asmcomp/riscv/emit.mlp
+ 1382  git diff 73ddaf5a4150c86e0142a5c8af17f26faf47798e 403042794068d29583e8b30e22bde94abaf27192 --stat -w asmcomp/riscv/emit.mlp
+ 1383  git diff 73ddaf5a4150c86e0142a5c8af17f26faf47798e 403042794068d29583e8b30e22bde94abaf27192 -w asmcomp/riscv/emit.mlp
+ 1384  git log
+ 1385  git diff 73ddaf5a4150c86e0142a5c8af17f26faf47798e 403042794068d29583e8b30e22bde94abaf27192 -w asmcomp/riscv/emit.mlp
+ 1386  git diff 73ddaf5a4150c86e0142a5c8af17f26faf47798e 403042794068d29583e8b30e22bde94abaf27192  asmcomp/riscv/emit.mlp
+ 1387  git log
+ 1388  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e asmcomp/riscv/emit.mlp
+ 1389  git log
+ 1390  git diff --help
+ 1391  git diff 403042794068d29583e8b30e22bde94abaf27192  asmcomp/riscv/emit.mlp
+ 1392  git diff
+ 1393  diff ~/ss.py ~/ss_cat.py 
+ 1394  git diff 403042794068d29583e8b30e22bde94abaf27192  asmcomp/riscv/emit.mlp
+ 1395  git diff 403042794068d29583e8b30e22bde94abaf27192  asmcomp/riscv/emit.mlp -w
+ 1396  git diff -w 403042794068d29583e8b30e22bde94abaf27192  asmcomp/riscv/emit.mlp 
+ 1397  git diff 73ddaf5a4150c86e0142a5c8af17f26faf47798e 403042794068d29583e8b30e22bde94abaf27192 --stat -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' asmcomp/riscv/emit.mlp
+ 1398  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e --stat -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' asmcomp/riscv/emit.mlp
+ 1399  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' asmcomp/riscv/emit.mlp
+ 1400  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' compenv/
+ 1401  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'
+ 1402  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat
+ 1403  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat typing/env.mli
+ 1404  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'  typing/env.mli
+ 1405  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'  stdlib/stream.mli
+ 1406  git log
+ 1407  git show deaa5bd4d84aed98cb338eee3185226a1aece644
+ 1408  git diff deaa5bd4d84aed98cb338eee3185226a1aece644 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'  stdlib/stream.mli
+ 1409  git diff deaa5bd4d84aed98cb338eee3185226a1aece644 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'
+ 1410  git diff deaa5bd4d84aed98cb338eee3185226a1aece644 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat
+ 1411  git diff deaa5bd4d84aed98cb338eee3185226a1aece644 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat > oo
+ 1412  subl oo 
+ 1413  git diff deaa5bd4d84aed98cb338eee3185226a1aece644 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat asmcomp/riscv/emit.mlp
+ 1414  git diff deaa5bd4d84aed98cb338eee3185226a1aece644 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat asmcomp/riscv/proc.ml
+ 1415  git diff deaa5bd4d84aed98cb338eee3185226a1aece644 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat driver/
+ 1416  git diff deaa5bd4d84aed98cb338eee3185226a1aece644 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' driver/compenv.ml
+ 1417  git diff deaa5bd4d84aed98cb338eee3185226a1aece644 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat driver/
+ 1418  cd ..
+ 1419  cd ocaml-freestanding-riscv/
+ 1420  git status
+ 1421  git log
+ 1422  git diff cbbeee46c7c8eb907e6f811ff9d4cc2b1c09957f 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat 
+ 1423  git log
+ 1424  git diff cbbeee46c7c8eb907e6f811ff9d4cc2b1c09957f 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat 
+ 1425  git diff cbbeee46c7c8eb907e6f811ff9d4cc2b1c09957f 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat runtime/
+ 1426  git status
+ 1427  git branch
+ 1428  git log
+ 1429  git checkout 0.6.2+riscv
+ 1430  git log
+ 1431  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat runtime/
+ 1432  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat runtime/bigarray.c
+ 1433  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'  runtime/bigarray.c
+ 1434  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat runtime/
+ 1435  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat runtime/array.c
+ 1436  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat runtime/memory.c
+ 1437  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' runtime/memory.c
+ 1438  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat runtime/
+ 1439  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat runtime/riscv.S
+ 1440  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'  runtime/riscv.S
+ 1441  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'  --stat runtime/
+ 1442  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'  --stat runtime/startup_nat.c
+ 1443  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'   runtime/startup_nat.c
+ 1444  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'   runtime/minor_gc.c
+ 1445  git diff 7e401f153a43da3f995a2db9bbb6d923313f7513 6ef630fead83a1d069d9b51ca60a86355905f948  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'   runtime/roots_nat.c
+ 1446  git diff deaa5bd4d84aed98cb338eee3185226a1aece644 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat asmcomp/riscv/emit.mlp
+ 1447  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' asmcomp/riscv/emit.mlp
+ 1448  cd ..
+ 1449  cd ocmal
+ 1450  cd ocaml
+ 1451  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' asmcomp/riscv/emit.mlp
+ 1452  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' asmcomp/riscv/emit.mlp --stat
+ 1453  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e --stat  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' asmcomp/riscv/emit.mlp 
+ 1454  cd ..
+ 1455  cd llvm-project/
+ 1456  history
+ 1457  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 --stat -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'
+ 1458  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 --stat -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'llvm/lib/Transforms/Instrumentation/ShaktiMS.cpp
+ 1459  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 --stat -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' llvm/lib/Transforms/Instrumentation/ShaktiMS.cpp
+ 1460  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' llvm/lib/Transforms/Instrumentation/ShaktiMS.cpp
+ 1461  subl llvm/lib/Transforms/Instrumentation/ShaktiMS.cpp
+ 1462  python
+ 1463  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 --stat -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'
+ 1464  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 --stat -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' llvm/lib/Target/RISCV/MachinePassCheckcap.cpp
+ 1465  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' llvm/lib/Target/RISCV/MachinePassCheckcap.cpp
+ 1466  subl llvm/lib/Target/RISCV/MachinePassCheckcap.cpp
+ 1467  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 --stat -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' llvm/lib/Target/RISCV/MachinePassCheckcap.cpp
+ 1468  python
+ 1469  which clang
+ 1470  clang
+ 1471  clang --version
+ 1472  cd ..
+ 1473  ls
+ 1474  cd fides_plots/
+ 1475  ls
+ 1476  cd ..
+ 1477  mkdir fides_new_plots
+ 1478  rm fides_new_plots/
+ 1479  rm fides_new_plots/ -rf
+ 1480  cp ss_cat.py fides_plots/fides_ganesha_cycle_new.py
+ 1481  cd fides_plots/
+ 1482  subl fides_ganesha_cycle_new.py 
+ 1483  cp fides_ganesha_cycle_new.py fides_ganesha_code_size_new.py 
+ 1484  subl fides_ganesha_code_size*
+ 1485  python fides_ganesha_code_size_new.py 
+ 1486  subl fides_ganesha_code_size*
+ 1487  python fides_ganesha_code_size_new.py 
+ 1488  python fides_ganesha_cycle_new.py 
+ 1489  ls
+ 1490  python fides_ganesha_code_size_new.py 
+ 1491  ls
+ 1492  subl fides_code_size.csv 
+ 1493  mkdir new_plots
+ 1494  cp * new_plots/
+ 1495  cd new_plots/
+ 1496  ls
+ 1497  rm fides_code_size.csv 
+ 1498  cp ../fides_code_size.csv .
+ 1499  rm fides_ganesha_code_size.py 
+ 1500  rm fides_ganesha_cycle.py 
+ 1501  ls
+ 1502  rm *.pdf
+ 1503  ls
+ 1504  mv fides_ganesha_code_size_new.py code_size.py
+ 1505  mv fides_ganesha_cycle_new.py cycle.py
+ 1506  ls
+ 1507  subl 
+ 1508  subl *
+ 1509  python cycle.py 
+ 1510  python code_size.py 
+ 1511  python cycle.py 
+ 1512  python code.py 
+ 1513  python code_size.py 
+ 1514  ls
+ 1515  cloc 
+ 1516  mirage-shakti 
+ 1517  cd ..
+ 1518  cd llvm-project/
+ 1519  git diff
+ 1520  git status
+ 1521  cd llvm/lib/Transforms/Instrumentation/ShaktiMS.cpp
+ 1522  cd llvm/lib/Transforms/Instrumentation
+ 1523  cloc ShaktiMS.cpp 
+ 1524  python
+ 1525  git status
+ 1526  cloc ../../Target/RISCV/MachinePassCheckcap.cpp
+ 1527  ls
+ 1528  cd ..
+ 1529  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat
+ 1530  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat llvm/lib/Target/RISCV/RISCVInstrInfo.td
+ 1531  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'  llvm/lib/Target/RISCV/RISCVInstrInfo.td
+ 1532  cloc ../../Target/RISCV/MachinePassCheckcap.cpp
+ 1533  cd ll
+ 1534  cd llvm/
+ 1535  ls
+ 1536  cd lib/
+ 1537  ls
+ 1538  cd Target/RISCV/
+ 1539  ls
+ 1540  pwd
+ 1541  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat
+ 1542  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' llvm/lib/Target/RISCV/RISCVISelLowering.cpp
+ 1543  cd ..
+ 1544  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' llvm/lib/Target/RISCV/RISCVISelLowering.cpp
+ 1545  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' llvm/lib/Target/RISCV/RISCVInstrFormats.td
+ 1546  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' llvm/lib/Target/RISCV/RISCVInstrInfo.td
+ 1547  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' llvm/lib/Target/RISCV/RISCVTargetMachine.cpp
+ 1548  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' clang/lib/CodeGen/BackendUtil.cpp
+ 1549  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat
+ 1550  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' llvm/include/llvm/IR/Intrinsics.td
+ 1551  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' llvm/include/llvm/IR/IntrinsicsRISCV.td
+ 1552  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat
+ 1553  git diff f7c39dd9af977ba0f1b5dd8620033465b7c9d6d6 123bc4c3fb6d4204898664c26218d39d26017a91 -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' llvm/lib/Target/RISCV/RISCVISelLowering.cpp
+ 1554  python
+ 1555  cd ..
+ 1556  cd mirage-shakti/
+ 1557  cd ocaml
+ 1558  cloc
+ 1559  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e --stat  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' asmcomp/riscv/emit.mlp 
+ 1560  cloc --diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  asmcomp/riscv/emit.mlp 
+ 1561  cloc --git --diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  asmcomp/riscv/emit.mlp 
+ 1562  cloc --git --diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e 
+ 1563  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e --stat  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' 
+ 1564  subl oo 
+ 1565  cloc asmcomp/riscv/emit.mlp
+ 1566  cp emit.mlp ll.ml
+ 1567  cp asmcomp/riscv/emit.mlp ll.ml
+ 1568  cloc ll.ml 
+ 1569  git status
+ 1570  cd ..
+ 1571  mkdir loc_count
+ 1572  cp ocaml/asmcomp/riscv/emit.mlp loc_count/emit_1.ml
+ 1573  cd ocaml
+ 1574  git checkout 403042794068d29583e8b30e22bde94abaf27192
+ 1575  git status
+ 1576  cd ..
+ 1577  cp ocaml/asmcomp/riscv/emit.mlp loc_count/emit_2.ml
+ 1578  cd loc_count/
+ 1579  cloc --diff emit_1.ml emit_2.ml 
+ 1580  diff emit_1.ml emit_2.ml 
+ 1581  diff emit_1.ml emit_2.ml > oo
+ 1582  subl oo 
+ 1583  utop
+ 1584  ocaml
+ 1585  mirage-shakti 
+ 1586  cd ocaml
+ 1587  subl asmcomp/riscv/emit.mlp
+ 1588  diff emit_1.ml emit_2.ml > oo
+ 1589  cd ..
+ 1590  cd loc_count/
+ 1591  ls
+ 1592  cloc emit_1.ml emit_2.ml 
+ 1593  cloc --diff emit_1.ml emit_2.ml 
+ 1594  subl *
+ 1595  cloc --diff emit_2.ml emit_1.ml 
+ 1596  diff cd ..
+ 1597  cd ..
+ 1598  cd ocaml
+ 1599  ls
+ 1600  git status
+ 1601  subl oo 
+ 1602  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e --stat  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' 
+ 1603  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e --stat  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'  > oo
+ 1604  subl oo
+ 1605  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'  typing/ctype.ml
+ 1606  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'   utils/clflags.ml
+ 1607  git diff 403042794068d29583e8b30e22bde94abaf27192 73ddaf5a4150c86e0142a5c8af17f26faf47798e  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)'   utils/clflags.mli
+ 1608  history
+ 1609  git log
+ 1610  git status
+ 1611  git checkout fides-exceptions
+ 1612  git status
+ 1613  git log
+ 1614  git checkout fides-exceptions-fluid-comp-benchmark 
+ 1615  git log
+ 1616  git diff deaa5bd4d84aed98cb338eee3185226a1aece644 a2713e84ac914e7fa93b52499e0c2f5a8ea0f126  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat
+ 1617  git diff deaa5bd4d84aed98cb338eee3185226a1aece644 a2713e84ac914e7fa93b52499e0c2f5a8ea0f126  -w -G'(^[^\*# /])|(^#\w)|(^\s+[^\*#/])|(^\\)' --stat > oo
+ 1618  subl oo 
+ 1619  git checkout  deaa5bd4d84aed98cb338eee3185226a1aece644
+ 1620  cp asmcomp/riscv/emit.mlp ../loc_count/emit_1.ml
+ 1621  cp driver/compenv.ml* ../loc_count/
+ 1622  cd ..
+ 1623  cd loc_count/
+ 1624  mv compenv.ml compenv_1.ml
+ 1625  mv compenv.mli compenv_1.mli
+ 1626  cd ..
+ 1627  cd ocaml
+ 1628  cp driver/main_args.ml ../loc_count/main_args_1.ml
+ 1629  cp driver/main_args.mli ../loc_count/main_args_1.mli
+ 1630  git checkout a2713e84ac914e7fa93b52499e0c2f5a8ea0f126
+ 1631  git status
+ 1632  git log
+ 1633  git checkout fides-exceptions
+ 1634  git log
+ 1635  cp driver/compenv.ml ../loc_count/compenv_2.ml
+ 1636  cp asmcomp/riscv/emit.mlp ../loc_count/emit_2.ml
+ 1637  cd ..
+ 1638  cd loc_count/
+ 1639  cloc --diff emit_1.ml emit_2.ml 
+ 1640  python
+ 1641  cloc --diff compenv_1.ml compenv_2.ml 
+ 1642  python
+ 1643  cd ..
+ 1644  cd ocaml-freestanding-riscv/
+ 1645  ls
+ 1646  git status
+ 1647  git log
+ 1648  git checkout fides-exceptions 
+ 1649  git log
+ 1650  python
+ 1651  cd
+ 1652  mkdir dddd
+ 1653  cd dddd/
+ 1654  git clone git@github.com:illustris/riscv-llvm-toolchain.git
+ 1655  cd riscv-llvm-toolchain/
+ 1656  ls
+ 1657  ./configure 
+ 1658  make -j8
+ 1659  sudo docker run --rm -it illustris/shakti-ms-artefacts
+ 1660  docker run --rm -it illustris/shakti-ms-artefacts
+ 1661  cd check_icfp_format/
+ 1662  ls
+ 1663  diff acmart.cls ../check_org_acmsmall/acmart.cls
+ 1664  diff acmauthoryear.cbx ../check_org_acmsmall/acmauthoryear.cbx 
+ 1665  diff acmguide.pdf ../check_org_acmsmall/acmguide.pdf 
+ 1666  diff acmnumeric.bbx ../check_org_acmsmall/acmnumeric.bbx 
+ 1667  diff ACM-Reference-Format.bst ../check_org_acmsmall/ACM-Reference-Format.bst 
+ 1668  diff sample-acmsmall.tex ../check_org_acmsmall/sample-acmsmall.tex 
+ 1669  diff acmauthoryear.bbx ../check_org_acmsmall/acmauthoryear.bbx 
+ 1670  diff acmdatamodel.dbx ../check_org_acmsmall/acmdatamodel.dbx 
+ 1671  diff acmnumeric.cbx ../check_org_acmsmall/acmnumeric.cbx 
+ 1672  diff README.txt ../check_org_acmsmall/acm
+ 1673  diff acmnumeric.bbx ../check_org_acmsmall/acmnumeric.bbx 
+ 1674  diff acmnumeric.bbx ../check_org_acmsmall/acmnumeric.bbx -s
+ 1675  diff acmart.cls ../Downloads/acmart_sheera.cls 
+ 1676  diff ~/Downloads/ACM-Reference-Format_sheera.bst ../check_org_acmsmall/ACM-Reference-Format.bst 
+ 1677  diff acmart.cls ../check_org_acmsmall/acmart.cls
+ 1678  cp acmart.cls acmart_old.cls 
+ 1679  cat acmart.cls 
+ 1680  subl acmart.cls 
+ 1681  cd check_org_acmsmall/
+ 1682  s
+ 1683  ls
+ 1684  cd Downloads/
+ 1685  cd mswasm/
+ 1686  ls
+ 1687  subl biblio.bib 
+ 1688  python
+ 1689  cd fides_plots/
+ 1690  ls
+ 1691  cd new_plots/
+ 1692  ls
+ 1693  subl cycle.py 
+ 1694  python cycle.py 
+ 1695  python code_size.py 
+ 1696  python cycle.py 
+ 1697  python
+ 1698  opam switch
+ 1699  eval $(opam env)
+ 1700  opam switch
+ 1701  opam switch fides-voting-system-1
+ 1702  eval $(opam env)
+ 1703  ls
+ 1704  opam pin list
+ 1705  mirage-shakti 
+ 1706  ls
+ 1707  cd ..
+ 1708  cd demo-mirage/
+ 1709  ls
+ 1710  cd voting_unikernel
+ 1711  ls
+ 1712  cd ..
+ 1713  cd mirage-shakti/
+ 1714  cd ..
+ 1715  cd demo-mirage/
+ 1716  ls
+ 1717  cd ..
+ 1718  ls
+ 1719  cd d
+ 1720  cd demo-mirage/
+ 1721  ls
+ 1722  cd voting-system-case-study/
+ 1723  ls
+ 1724  cd comp-transition/
+ 1725  ls
+ 1726  subl names.txt 
+ 1727  subl comps_active.txt 
+ 1728  subl notes.txt 
+ 1729  subl compartment_transition_stats.txt 
+ 1730  cd ..
+ 1731  ls
+ 1732  cd voting_unikernel_unix/
+ 1733  ls
+ 1734  cd ..
+ 1735  ls
+ 1736  cd ..
+ 1737  ls
+ 1738  cd mirage-shakti/
+ 1739  ls
+ 1740  cd mirage-crypto-riscv/
+ 1741  ls
+ 1742  cd src/
+ 1743  ls
+ 1744  cd ..
+ 1745  cd pk/
+ 1746  ls
+ 1747  cd ..
+ 1748  ls
+ 1749  cd ..
+ 1750  cd setu-cap-files/
+ 1751  ls
+ 1752  cd ..
+ 1753  cd mirage-crypto-riscv/
+ 1754  ls
+ 1755  subl mirage-crypto.opam 
+ 1756  subl src/dune 
+ 1757  cd ..
+ 1758  cd mirage-riscv/
+ 1759  ls
+ 1760  subl lib/dune 
+ 1761  opam switch
+ 1762  opam pin list
+ 1763  cd ..
+ 1764  cd mirage-crypto-riscv/
+ 1765  git log
+ 1766  git checkout fides-voting-system-1 
+ 1767  cd ..
+ 1768  cd demo-mirage/
+ 1769  ls
+ 1770  cd voting_unikernel
+ 1771  ls
+ 1772  riscv64-unknown-elf-objdump -D votes_strategy_1 > dump_fluid
+ 1773  subl dump_fluid 
+ 1774  cde
+ 1775  cd
+ 1776  cd votes_benchmarks/
+ 1777  ls
+ 1778  cat output_votes_strategy_1 
+ 1779  top output_votes_strategy_1 
+ 1780  top cat output_votes_strategy_1 
+ 1781  head cat output_votes_strategy_1 
+ 1782  head output_votes_strategy_1 
+ 1783  python
+ 1784  mirage-shakti 
+ 1785  cd ..
+ 1786  cd demo-mirage/voting_unikernel
+ 1787  ls
+ 1788  grep -e "checkcap" dump_fluid 
+ 1789  grep -e "checkcap" dump_fluid > cchc
+ 1790  subl cchc 
+ 1791  python
+ 1792  cd fides_plots/
+ 1793  ls
+ 1794  cd new_plots/
+ 1795  ls
+ 1796  subl fides_code_size.csv 
+ 1797  ls
+ 1798  ssh sai@10.147.20.244
+ 1799  cd Downloads/
+ 1800  diff FIDES_ICFP_2024_submission_2.pdf FIDES_ICFP_2024_submission_2_2.pdf 
+ 1801  diff FIDES_ICFP_2024_submission_2.pdf FIDES_ICFP_2024_submission_2_2.pdf -s
+ 1802  cd Downloads/
+ 1803  diff FIDES_ICFP_20242.pdf FIDES_ICFP_2024_submission_5.pdf 
+ 1804  diff icfp24-paper92.pdf FIDES_ICFP_2024_submission_5.pdf 
+ 1805  diff icfp24-paper92.pdf FIDES_ICFP_2024_submission_5.pdf -s
+ 1806  mirage-shakti 
+ 1807  cd run
+ 1808  cd ocaml
+ 1809  ls
+ 1810  cd runtime/
+ 1811  ls
+ 1812  cd ..
+ 1813  ls
+ 1814  cd bytecomp/
+ 1815  ls
+ 1816  cd ..
+ 1817  pstree
+ 1818  mirage-shakti 
+ 1819  ls
+ 1820  cd ..
+ 1821  ls
+ 1822  strace
+ 1823  ptrace
+ 1824  mirage-shakti
+ 1825  mirage-shakti 
+ 1826  cd ..
+ 1827  ls
+ 1828  cd c-class/
+ 1829  ls
+ 1830  mirage-shakti 
+ 1831  ls
+ 1832  cd ..
+ 1833  ls
+ 1834  cd ..
+ 1835  ls
+ 1836  cat pwn.ml 
+ 1837  mirage-shakti 
+ 1838  ls
+ 1839  cd zarith-riscv/
+ 1840  ls
+ 1841  mirage-shakti 
+ 1842  ls
+ 1843  cd ..
+ 1844  ls
+ 1845  cd bsc/
+ 1846  ls
+ 1847  cd build/
+ 1848  ls
+ 1849  mirage-shakti 
+ 1850  ls
+ 1851  cd ..
+ 1852  ls
+ 1853  cd ..
+ 1854  ls
+ 1855  mirage-shakti 
+ 1856  ls
+ 1857  sudp apt update
+ 1858  vmstat
+ 1859  vmstat 1 3
+ 1860  top
+ 1861  cat /proc/83923/status 
+ 1862  top
+ 1863  python
+ 1864  truecaller
+ 1865  truecallerjs
+ 1866  truecallerjs -s +919311883785
+ 1867  truecallerjs -s +917303459954
+ 1868  truecallerjs -s +9136679202
+ 1869  cd cs2610/
+ 1870  ls
+ 1871  riscv64-unknown-elf-gcc lab2.s 
+ 1872  cd Downloads/
+ 1873  ls *Lab4*
+ 1874  cd ..
+ 1875  cd TA/
+ 1876  ls
+ 1877  mkdir CS2610_S24
+ 1878  cd CS2610_S24/
+ 1879  ls ../../Downloads/*Lab4*
+ 1880  mv ../../Downloads/*Lab4* .
+ 1881  ls
+ 1882  ls ../../Downloads/*lab4*
+ 1883  mv ../../Downloads/*lab4* .
+ 1884  cd lab_2/bloomy/
+ 1885  ls
+ 1886  riscv64-unknown-elf-gcc sub.s 
+ 1887  ls
+ 1888  spike pk a.out 
+ 1889  docker run -it -v <path to where xv6-riscv cloned in your host system>/xv6-riscv:/home/os-iitm/xv6-riscv svkv/riscv-tools:v1.0
+ 1890  docker run -it -v $pwd:/home/os-iitm svkv/riscv-tools:v1.0
+ 1891  docker run -it -v "$pwd":/home/os-iitm svkv/riscv-tools:v1.0
+ 1892  pwd
+ 1893  docker run -it -v /home/sai/TA/CS2610_S24/lab_2/bloomy:/home/os-iitm svkv/riscv-tools:v1.0
+ 1894  docker run -it svkv/riscv-tools:v1.0
+ 1895  docker run -it -v /home/sai/TA/CS2610_S24/lab_2/bloomy:/home/os-iitm/lab svkv/riscv-tools:v1.0
+ 1896  cd TA/CS2610_S24/lab_2/aarav/
+ 1897  ls
+ 1898  cat output_1.png 
+ 1899  ls
+ 1900  cd ..
+ 1901  cd bloomy/
+ 1902  ls
+ 1903  docker run -it -v /home/sai/TA/CS2610_S24/lab_2/aarav:/home/os-iitm/lab svkv/riscv-tools:v1.0
+ 1904  riscv64-unknown-elf-objdump -D a.out > dump
+ 1905  subl dump 
+ 1906  docker run -it -v /home/sai/TA/CS2610_S24/lab_2/aarav:/home/os-iitm/lab svkv/riscv-tools:v1.0
+ 1907  docker run -it -v /home/sai/TA/CS2610_S24/lab_2/bloomy:/home/os-iitm/lab svkv/riscv-tools:v1.0
+ 1908  riscv64-unknown-elf-objdump -D a.out > dump
+ 1909  subl dump 
+ 1910  docker run -it -v /home/sai/TA/CS2610_S24/lab_2/bloomy:/home/os-iitm/lab svkv/riscv-tools:v1.0
+ 1911  riscv64-unknown-elf-gcc sub.s 
+ 1912  riscv64-unknown-elf-objdump -D a.out > dump
+ 1913  docker run -it -v /home/sai/TA/CS2610_S24/lab_2/bloomy:/home/os-iitm/lab svkv/riscv-tools:v1.0
+ 1914  python
+ 1915  riscv64-unknown-elf-gcc sub.s 
+ 1916  riscv64-unknown-elf-objdump -D a.out > dump
+ 1917  subl dump 
+ 1918  docker run -it -v /home/sai/TA/CS2610_S24/lab_2/bloomy:/home/os-iitm/lab svkv/riscv-tools:v1.0
+ 1919  python
+ 1920  cd ..
+ 1921  cd aarav/
+ 1922  ls
+ 1923  subl cs2610-lab2-sub.s 
+ 1924  riscv64-unknown-elf-gcc cs2610-lab2-sub.s 
+ 1925  riscv64-unknown-elf-objdump -D a.out > dump
+ 1926  docker run -it -v /home/sai/TA/CS2610_S24/lab_2/bloomy:/home/os-iitm/lab svkv/riscv-tools:v1.0
+ 1927  docker run -it -v /home/sai/TA/CS2610_S24/lab_2/aarav:/home/os-iitm/lab svkv/riscv-tools:v1.0
+ 1928  subl dump 
+ 1929  docker run -it -v /home/sai/TA/CS2610_S24/lab_2/aarav:/home/os-iitm/lab svkv/riscv-tools:v1.0
+ 1930  ls
+ 1931  riscv64-unknown-elf-gcc cs2610-lab2-sub.s 
+ 1932  rm a.out 
+ 1933  riscv64-unknown-elf-gcc cs2610-lab2-sub.s 
+ 1934  ls
+ 1935  riscv64-unknown-elf-objdump -D a.out > dump
+ 1936  rm a.out 
+ 1937  riscv64-unknown-elf-gcc cs2610-lab2-sub.s 
+ 1938  riscv64-unknown-elf-objdump -D a.out > dump
+ 1939  rm dump 
+ 1940  sudo rm dump 
+ 1941  riscv64-unknown-elf-objdump -D a.out > dump
+ 1942  ls
+ 1943  subl dump 
+ 1944  docker run -it -v /home/sai/TA/CS2610_S24/lab_2/aarav:/home/os-iitm/lab svkv/riscv-tools:v1.0
+ 1945  python
+ 1946  pip install tabula
+ 1947  python
+ 1948  pip install tabula-py
+ 1949  python
+ 1950  truecallerjs
+ 1951  truecallerjs -s 9136928559
+ 1952  python
+ 1953  cd 
+ 1954  cd fintech/
+ 1955  ls
+ 1956  cd TA/PMRF/Stella_OS_Jan_2024/
+ 1957  ls
+ 1958  cd L
+ 1959  cd lab/
+ 1960  ls
+ 1961  code lab1.md 
+ 1962  cp lab1.md lab2.md
+ 1963  subl lab2.md 
+ 1964  code lab2.md 
+ 1965  subl file2.txt
+ 1966  awk file2.txt 
+ 1967  awk {print} file2.txt 
+ 1968  awk {print $1\} file2.txt 
+ 1969  awk {print $1} file2.txt 
+ 1970  awk '{print $1}' file2.txt 
+ 1971  awk '{print $1,$4}' file2.txt 
+ 1972  awk '{print $1 $4}' file2.txt 
+ 1973  awk '{print $1;$4}' file2.txt 
+ 1974  awk '{print $1$4}' file2.txt 
+ 1975  awk '{print $1-$4}' file2.txt 
+ 1976  comm
+ 1977  man comm
+ 1978  awk '{print $1-$4}' file2.txt 
+ 1979  awk '{print $1 "-" $4}' file2.txt 
+ 1980  awk '{print $1 "---" $4}' file2.txt 
+ 1981  awk '{print $1}' file2.txt 
+ 1982  awk '{print $1}' file2.txt  | sort | uniq
+ 1983  awk '{NR==7 print $0}' file2.txt  | sort | uniq
+ 1984  awk 'NR==7 {print $0}' file2.txt  | sort | uniq
+ 1985  awk '$6=="-" {print $0}' file2.txt  | sort | uniq
+ 1986  awk '$6=="-" {print $0}' file2.txt  
+ 1987  awk '$6=="-" {print $0}' file2.txt  > dummy.txt
+ 1988  cat dummy.txt 
+ 1989  awk '{ if (length($0) > max) max = length($0) } END { print max }'
+ 1990  awk '{ if (length($0) > max) max = length($0) } END { print max }' file2.txt 
+ 1991  subl file2.txt 
+ 1992  awk '{ if (length($0) > max) max = length($0) } END { print max }' file2.txt 
+ 1993  grep -c -e "chr7" file2.txt
+ 1994  ls
+ 1995  cp lab2.md lab3.md
+ 1996  code lab3.md 
+ 1997  man pwd
+ 1998  touch file3.doc
+ 1999  echo "Welcome to the Unix session" > file3.doc
+ 2000  cat file3.doc 
+ 2001  code
+ 2002  cd TA/PMRF/Stella_OS_Jan_2024/lab/
+ 2003  ls
+ 2004  mkdir kk
+ 2005  man touch
+ 2006  touch kk/lkl
+ 2007  cd kk/
+ 2008  ls
+ 2009  cd ..
+ 2010  cd 
+ 2011  ls
+ 2012  pwd
+ 2013  mirage-shakti 
+ 2014  cd
+ 2015  cd TA/PMRF/Stella_OS_Jan_2024/lab
+ 2016  ls
+ 2017  rm -rf kk/
+ 2018  ls
+ 2019  rm dummy.txt 
+ 2020  mkdir kk kk/ll
+ 2021  cd kk/
+ 2022  ls
+ 2023  cd ll/
+ 2024  ls
+ 2025  cd ..
+ 2026  rm -rf kk
+ 2027  mkdir temp1/temp1a temp1/temp1b temp1
+ 2028  hist
+ 2029  history
+ 2030  history > myhist
